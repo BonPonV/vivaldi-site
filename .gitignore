@@ -1,0 +1,48 @@
+# Виртуальные окружения
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Локальные файлы настроек (хранят пароли и секретные ключи)
+local_settings.py
+settings_local.py
+secrets.json
+.env
+
+# Базы данных (SQLite)
+db.sqlite3
+db.sqlite3-journal
+
+# Кеш Python и скомпилированные файлы
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Файлы миграций Django (кроме __init__.py)
+# Раскомментируйте следующие строки, если не пушите миграции на сервер
+# migrations/*.py
+# !migrations/__init__.py
+
+# Статика (опционально: зависит от того, собираете ли вы ее локально)
+# staticfiles/
+# media/
+
+# Сборка и упаковка
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Файлы IDE (VS Code, PyCharm, Sublime Text)
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
