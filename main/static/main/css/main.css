@@ -1,0 +1,5 @@
+/* Подключаем все файлы в правильном порядке */
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('pages/home.css');

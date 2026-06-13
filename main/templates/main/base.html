@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Заголовок страницы (меняется на каждой странице) -->
+    <title>{% block title %}Вивальди — Шторы и Жалюзи{% endblock %}</title>
+    
+    <!-- Подключаем ВСЕ стили через один файл -->
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    
+    <!-- Сюда можно добавить специфичные стили для конкретной страницы -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- ШАПКА (одинаковая на всех страницах) -->
+    <header class="main-header">
+        <div class="brand-wrapper">
+            <div class="logo-icon"></div> 
+            <span class="brand-name">Вивальди</span>
+        </div>
+        <button class="burger-btn" aria-label="Открыть меню">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- СЮДА ВСТАВЛЯЕТСЯ УНИКАЛЬНЫЙ КОНТЕНТ КАЖДОЙ СТРАНИЦЫ -->
+    <main class="main-content">
+        {% block content %}
+        <!-- По умолчанию пусто -->
+        {% endblock %}
+    </main>
+
+    <!-- МЕНЮ (одинаковое на всех страницах) -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" aria-label="Закрыть меню">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="menu-nav">
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog">Каталог</a></li>
+                <li><a href="/service">Сервисный Центр</a></li>
+                <li><a href="/discounts">Выгода</a></li>
+                <li><a href="/partners">Партнерам</a></li>
+                <li><a href="/reviews">Отзывы</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Подключаем ВСЕ скрипты через один файл -->
+    <script type="module" src="{% static 'main/js/main.js' %}"></script>
+    
+    <!-- Сюда можно добавить специфичные скрипты для конкретной страницы -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,266 +1,227 @@
+{% extends 'main/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вивальди — Шторы и Жалюзи премиум-класса</title>
-    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-</head>
-<body>
+{% block title %}Вивальди — Шторы и Жалюзи премиум-класса{% endblock %}
 
-    <header class="main-header">
-        <div class="brand-wrapper">
-            <div class="logo-icon"></div> 
-            <span class="brand-name">Вивальди</span>
+{% block content %}
+    <!-- СЛАЙДЕР -->
+    <section class="slider-container">
+        <div class="slider-track">
+            <div class="slide-card">
+                <img src="{% static 'main/images/curtains-main.png' %}" alt="Шторы на заказ">
+                <div class="slide-overlay">
+                    <h2>Шторы на заказ</h2>
+                    <p>Индивидуальный пошив под ваш интерьер</p>
+                </div>
+            </div>
+            <div class="slide-card">
+                <img src="{% static 'main/images/blinds-zebra.png' %}" alt="Жалюзи Зебра">
+                <div class="slide-overlay">
+                    <h2>Жалюзи «Зебра»</h2>
+                    <p>Стильное решение для офиса и дома</p>
+                </div>
+            </div>
+            <div class="slide-card">
+                <img src="{% static 'main/images/cornices.jpg' %}" alt="Карнизы">
+                <div class="slide-overlay">
+                    <h2>Карнизы</h2>
+                    <p>Надёжный монтаж под любой потолок</p>
+                </div>
+            </div>
+            <div class="slide-card">
+                <img src="{% static 'main/images/bedding.png' %}" alt="Текстиль">
+                <div class="slide-overlay">
+                    <h2>Текстиль для дома</h2>
+                    <p>Покрывала, пледы и подушки</p>
+                </div>
+            </div>
+            <div class="slide-card">
+                <img src="{% static 'main/images/accessories.png' %}" alt="Аксессуары">
+                <div class="slide-overlay">
+                    <h2>Аксессуары</h2>
+                    <p>Крючки, зажимы, подхваты для штор</p>
+                </div>
+            </div>
+            <div class="slide-card">
+                <img src="{% static 'main/images/refresh.png' %}" alt="Обновление без монтажа">
+                <div class="slide-overlay">
+                    <h2>Обновление без монтажа</h2>
+                    <p>Замена ткани на существующем механизме</p>
+                </div>
+            </div>
         </div>
-        <button class="burger-btn" aria-label="Открыть меню">
-            <span></span><span></span><span></span>
+        <button class="slide-arrow prev" aria-label="Предыдущий слайд">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
-    </header>
-
-    <main class="main-content">
-        
-        <!-- СЛАЙДЕР -->
-        <section class="slider-container">
-            <div class="slider-track">
-                <div class="slide-card">
-                    <img src="{% static 'main/images/curtains-main.png' %}" alt="Шторы на заказ">
-                    <div class="slide-overlay">
-                        <h2>Шторы на заказ</h2>
-                        <p>Индивидуальный пошив под ваш интерьер</p>
-                    </div>
-                </div>
-                <div class="slide-card">
-                    <img src="{% static 'main/images/blinds-zebra.png' %}" alt="Жалюзи Зебра">
-                    <div class="slide-overlay">
-                        <h2>Жалюзи «Зебра»</h2>
-                        <p>Стильное решение для офиса и дома</p>
-                    </div>
-                </div>
-                <div class="slide-card">
-                    <img src="{% static 'main/images/cornices.jpg' %}" alt="Карнизы">
-                    <div class="slide-overlay">
-                        <h2>Карнизы</h2>
-                        <p>Надёжный монтаж под любой потолок</p>
-                    </div>
-                </div>
-                <div class="slide-card">
-                    <img src="{% static 'main/images/bedding.png' %}" alt="Текстиль">
-                    <div class="slide-overlay">
-                        <h2>Текстиль для дома</h2>
-                        <p>Покрывала, пледы и подушки</p>
-                    </div>
-                </div>
-                <div class="slide-card">
-                    <img src="{% static 'main/images/accessories.png' %}" alt="Аксессуары">
-                    <div class="slide-overlay">
-                        <h2>Аксессуары</h2>
-                        <p>Крючки, зажимы, подхваты для штор</p>
-                    </div>
-                </div>
-                <div class="slide-card">
-                    <img src="{% static 'main/images/refresh.png' %}" alt="Обновление без монтажа">
-                    <div class="slide-overlay">
-                        <h2>Обновление без монтажа</h2>
-                        <p>Замена ткани на существующем механизме</p>
-                    </div>
-                </div>
-            </div>
-            <button class="slide-arrow prev" aria-label="Предыдущий слайд">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <button class="slide-arrow next" aria-label="Следующий слайд">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-        </section>
-
-        <!-- КАТАЛОГ -->
-        <section class="catalog-section">
-            <h2 class="section-title">Каталог</h2>
-            <div class="catalog-grid">
-                <a href="/catalog/kitchen" class="catalog-card">
-                    <div class="card-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
-                            <path d="M7 2v20"></path>
-                            <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
-                        </svg>
-                    </div>
-                    <span class="card-title">Для кухни</span>
-                </a>
-                <a href="/catalog/bedroom" class="catalog-card">
-                    <div class="card-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 4v16"></path>
-                            <path d="M2 8h18a2 2 0 0 1 2 2v10"></path>
-                            <path d="M2 17h20"></path>
-                            <path d="M6 8v9"></path>
-                        </svg>
-                    </div>
-                    <span class="card-title">Для спальни</span>
-                </a>
-                <a href="/catalog/living" class="catalog-card">
-                    <div class="card-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path>
-                            <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"></path>
-                            <path d="M4 18v2"></path>
-                            <path d="M20 18v2"></path>
-                        </svg>
-                    </div>
-                    <span class="card-title">Для гостиной</span>
-                </a>
-                <a href="/catalog/kids" class="catalog-card">
-                    <div class="card-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="4" r="2"></circle>
-                            <path d="M21 17.5v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1"></path>
-                            <path d="M9 11V8"></path>
-                            <path d="M15 11V8"></path>
-                            <path d="M6 17h12v-5a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3Z"></path>
-                        </svg>
-                    </div>
-                    <span class="card-title">Для детской</span>
-                </a>
-                <a href="/catalog/balcony" class="catalog-card">
-                    <div class="card-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                            <path d="M3 12h18"></path>
-                            <path d="M12 3v18"></path>
-                        </svg>
-                    </div>
-                    <span class="card-title">На балкон</span>
-                </a>
-                <a href="/catalog/office" class="catalog-card">
-                    <div class="card-icon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
-                    </div>
-                    <span class="card-title">Для офиса</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- КВИЗ -->
-        <section class="quiz-banner">
-            <div class="quiz-banner-content">
-                <div class="quiz-badge">Персональный подбор</div>
-                <h2 class="quiz-title">Подберём идеальные шторы за 1 минуту</h2>
-                <p class="quiz-subtitle">Ответьте на 3 вопроса — получите 3 варианта под ваш интерьер и бюджет</p>
-                <button class="quiz-start-btn" id="quizStartBtn">
-                    Начать подбор
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
-            </div>
-        </section>
-
-        <!-- ПОПУЛЯРНЫЕ ТОВАРЫ -->
-        <section class="popular-section">
-            <div class="section-header">
-                <h2 class="section-title">Выбор клиентов</h2>
-                <span class="section-subtitle">247 заказов за месяц</span>
-            </div>
-            <div class="products-grid">
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'main/images/popular-zebra.jpg' %}" alt="Жалюзи Зебра Премиум" loading="lazy">
-                        <span class="product-badge">Хит</span>
-                        <span class="product-stock">Осталось 12 шт.</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Жалюзи «Зебра» Премиум</h3>
-                        <p class="product-desc">Нежная текстура, мягко фильтрующая утренний свет</p>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-old">4 800 ₽</span>
-                                <span class="price-new">3 490 ₽</span>
-                            </div>
-                            <button class="product-btn">Заказать</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'main/images/popular-curtains.jpg' %}" alt="Шторы Блэкаут" loading="lazy">
-                        <span class="product-badge new">Новинка</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Шторы Blackout «Тишина»</h3>
-                        <p class="product-desc">Плотное плетение, создающее идеальную тишину для сна</p>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-new">5 900 ₽</span>
-                            </div>
-                            <button class="product-btn">Заказать</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="{% static 'main/images/popular-roller.jpg' %}" alt="Рулонные шторы" loading="lazy">
-                        <span class="product-badge top">Топ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Рулонные «Минимал»</h3>
-                        <p class="product-desc">Лаконичный дизайн, который растворяется в интерьере</p>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-new">2 790 ₽</span>
-                            </div>
-                            <button class="product-btn">Заказать</button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ДОВЕРИЕ -->
-        <section class="trust-section">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-number">30</div>
-                    <div class="trust-label">лет на рынке</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">12 000+</div>
-                    <div class="trust-label">довольных клиентов</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">2 года</div>
-                    <div class="trust-label">гарантии на всё</div>
-                </div>
-            </div>
-        </section>
-
-        <button class="btn-invite-master">Бесплатный замер</button>
-    </main>
-
-    <!-- МЕНЮ -->
-    <div class="menu-overlay" id="menuOverlay">
-        <button class="menu-close" aria-label="Закрыть меню">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+        <button class="slide-arrow next" aria-label="Следующий слайд">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
-        <nav class="menu-nav">
-            <ul>
-                <li><a href="/catalog">Каталог</a></li>
-                <li><a href="/service">Сервисный Центр «Вивальди»</a></li>
-                <li><a href="/discounts">Выгода (скидки, акции, распродажи)</a></li>
-                <li><a href="/partners">Партнерам</a></li>
-                <li><a href="/reviews">Отзывы</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-            </ul>
-        </nav>
-    </div>
+    </section>
+
+    <!-- КАТАЛОГ -->
+    <section class="catalog-section">
+        <h2 class="section-title">Каталог</h2>
+        <div class="catalog-grid">
+            <a href="/catalog/kitchen" class="catalog-card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
+                        <path d="M7 2v20"></path>
+                        <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
+                    </svg>
+                </div>
+                <span class="card-title">Для кухни</span>
+            </a>
+            <a href="/catalog/bedroom" class="catalog-card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 4v16"></path>
+                        <path d="M2 8h18a2 2 0 0 1 2 2v10"></path>
+                        <path d="M2 17h20"></path>
+                        <path d="M6 8v9"></path>
+                    </svg>
+                </div>
+                <span class="card-title">Для спальни</span>
+            </a>
+            <a href="/catalog/living" class="catalog-card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path>
+                        <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"></path>
+                        <path d="M4 18v2"></path>
+                        <path d="M20 18v2"></path>
+                    </svg>
+                </div>
+                <span class="card-title">Для гостиной</span>
+            </a>
+            <a href="/catalog/kids" class="catalog-card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="4" r="2"></circle>
+                        <path d="M21 17.5v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1"></path>
+                        <path d="M9 11V8"></path>
+                        <path d="M15 11V8"></path>
+                        <path d="M6 17h12v-5a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3Z"></path>
+                    </svg>
+                </div>
+                <span class="card-title">Для детской</span>
+            </a>
+            <a href="/catalog/balcony" class="catalog-card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <path d="M3 12h18"></path>
+                        <path d="M12 3v18"></path>
+                    </svg>
+                </div>
+                <span class="card-title">На балкон</span>
+            </a>
+            <a href="/catalog/office" class="catalog-card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </div>
+                <span class="card-title">Для офиса</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- КВИЗ -->
+    <section class="quiz-banner">
+        <div class="quiz-banner-content">
+            <div class="quiz-badge">Персональный подбор</div>
+            <h2 class="quiz-title">Подберём идеальные шторы за 1 минуту</h2>
+            <p class="quiz-subtitle">Ответьте на 3 вопроса — получите 3 варианта под ваш интерьер и бюджет</p>
+            <button class="quiz-start-btn" id="quizStartBtn">
+                Начать подбор
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- ПОПУЛЯРНЫЕ ТОВАРЫ -->
+    <section class="popular-section">
+        <div class="section-header">
+            <h2 class="section-title">Выбор клиентов</h2>
+            <span class="section-subtitle">247 заказов за месяц</span>
+        </div>
+        <div class="products-grid">
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="{% static 'main/images/popular-zebra.jpg' %}" alt="Жалюзи Зебра Премиум" loading="lazy">
+                    <span class="product-badge">Хит</span>
+                    <span class="product-stock">Осталось 12 шт.</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Жалюзи «Зебра» Премиум</h3>
+                    <p class="product-desc">Нежная текстура, мягко фильтрующая утренний свет</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-old">4 800 ₽</span>
+                            <span class="price-new">3 490 ₽</span>
+                        </div>
+                        <button class="product-btn">Заказать</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="{% static 'main/images/popular-curtains.jpg' %}" alt="Шторы Блэкаут" loading="lazy">
+                    <span class="product-badge new">Новинка</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Шторы Blackout «Тишина»</h3>
+                    <p class="product-desc">Плотное плетение, создающее идеальную тишину для сна</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-new">5 900 ₽</span>
+                        </div>
+                        <button class="product-btn">Заказать</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="{% static 'main/images/popular-roller.jpg' %}" alt="Рулонные шторы" loading="lazy">
+                    <span class="product-badge top">Топ</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Рулонные «Минимал»</h3>
+                    <p class="product-desc">Лаконичный дизайн, который растворяется в интерьере</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-new">2 790 ₽</span>
+                        </div>
+                        <button class="product-btn">Заказать</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ДОВЕРИЕ -->
+    <section class="trust-section">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-number">30</div>
+                <div class="trust-label">лет на рынке</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">12 000+</div>
+                <div class="trust-label">довольных клиентов</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">2 года</div>
+                <div class="trust-label">гарантии на всё</div>
+            </div>
+        </div>
+    </section>
+
+    <button class="btn-invite-master">Бесплатный замер</button>
 
     <!-- КВИЗ С РЕЗУЛЬТАТОМ -->
     <div class="quiz-modal" id="quizModal">
@@ -276,7 +237,6 @@
                 <div class="quiz-progress-bar" id="quizProgressBar"></div>
             </div>
 
-            <!-- Шаг 1 -->
             <div class="quiz-step active" data-step="1">
                 <h3 class="quiz-question">Для какого помещения подбираем?</h3>
                 <div class="quiz-options">
@@ -287,7 +247,6 @@
                 </div>
             </div>
 
-            <!-- Шаг 2 -->
             <div class="quiz-step" data-step="2">
                 <h3 class="quiz-question">Какой тип вам ближе?</h3>
                 <div class="quiz-options">
@@ -298,7 +257,6 @@
                 </div>
             </div>
 
-            <!-- Шаг 3 -->
             <div class="quiz-step" data-step="3">
                 <h3 class="quiz-question">Сколько света хотите?</h3>
                 <div class="quiz-options">
@@ -308,7 +266,6 @@
                 </div>
             </div>
 
-            <!-- Шаг 4: РЕЗУЛЬТАТ -->
             <div class="quiz-step" data-step="4">
                 <h3 class="quiz-question">Вот 3 идеальных варианта для вас</h3>
                 <p class="quiz-hint">Мы подобрали шторы под ваш интерьер и бюджет</p>
@@ -349,7 +306,6 @@
                 </div>
             </div>
 
-            <!-- Шаг 5: ФОРМА ЗАКАЗА -->
             <div class="quiz-step" data-step="5">
                 <h3 class="quiz-question">Оставьте номер — мастер подтвердит наличие</h3>
                 <p class="quiz-hint">Мастер свяжется в течение 15 минут, подтвердит наличие выбранных штор и рассчитает точную стоимость с учётом ваших размеров</p>
@@ -360,7 +316,6 @@
                 <p class="quiz-privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
             </div>
 
-            <!-- Шаг 6: УСПЕХ -->
             <div class="quiz-step" data-step="6">
                 <div class="quiz-success">
                     <div class="quiz-success-icon">✓</div>
@@ -370,7 +325,4 @@
             </div>
         </div>
     </div>
-
-    <script src="{% static 'main/js/js.js' %}"></script>
-</body>
-</html>
+{% endblock %}
